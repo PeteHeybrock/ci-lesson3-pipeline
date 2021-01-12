@@ -12,7 +12,6 @@ jobs:
           key: "npm-packages"
           paths:
             - /src/node_modules
-      - run: ls /src/node_modules
       - run: npm run lint 
 
   test:
