@@ -11,8 +11,8 @@ jobs:
       - save_cache:
           key: "npm-packages"
           paths:
-            - ~/circleci-cache
-      - run: ls -lR ~/circleci-cache
+            - /src/node_modules
+      - run: ls /src/node_modules
       - run: npm run lint 
 
   test:
@@ -31,3 +31,6 @@ workflows:
   my_workflow:
     jobs:
       - build
+      - test:
+          requires: 
+            - build
