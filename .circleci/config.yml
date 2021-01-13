@@ -8,10 +8,10 @@ jobs:
     steps:
       - checkout
       - run: npm i
-      - save_cache:
-          key: "v2-npm-packages"
-          paths:
-            - node_modules
+#      - save_cache:
+#          key: "v2-npm-packages"
+#          paths:
+#            - node_modules
       - run: npm run lint 
 
   test:
@@ -19,9 +19,9 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - "v2-npm-packages"
+#      - restore_cache:
+#          keys:
+#            - "v2-npm-packages"
       - run: npm i
       - run: npm run test
 
@@ -30,9 +30,9 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - "v2-npm-packages"
+ #     - restore_cache:
+ #         keys:
+ #           - "v2-npm-packages"
       - run: npm audit
 
 # Orchestrate or schedule a set of jobs
