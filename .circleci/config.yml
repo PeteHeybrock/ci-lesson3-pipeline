@@ -9,9 +9,9 @@ jobs:
       - checkout
       - run: npm i
       - save_cache:
-          key: "v1-npm-packages"
+          key: "v2-npm-packages"
           paths:
-            - /src/node_modules
+            - node_modules
       - run: npm run lint 
 
   test:
@@ -21,7 +21,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - "v1-npm-packages"
+            - "v2-npm-packages"
       - run: npm i
       - run: npm run test
 
